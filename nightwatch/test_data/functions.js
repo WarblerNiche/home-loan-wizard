@@ -20,14 +20,14 @@ module.exports = {
             browser.click(selectors.button.next)
             browser.pause(200)
         }
-        if (test.cityName) {
+        if (test.cityName) { //page three
             browser.click(selectors.field.cityName)
             browser.setValue(selectors.field.cityName, test.cityName)
                 .verify.value(selectors.field.cityName, test.cityName)
             browser.click(selectors.button.next)
             browser.pause(200)
         }
-        if (test.purchasePrice || test.downPayment) {
+        if (test.purchasePrice || test.downPayment) { //page four
             browser.click(selectors.button[test.loanUse])
             browser.pause(200)
             browser.click(selectors.button[test.foundNew])
@@ -44,7 +44,7 @@ module.exports = {
             }
             browser.click(selectors.button.next)
         }
-        if (test.address1 || test.address2 || test.address3) {
+        if (test.address1 || test.address2 || test.address3) { //page five
             browser.pause(200)
             browser.click(selectors.button[test.creditScore])
             browser.pause(200)
@@ -65,7 +65,7 @@ module.exports = {
             browser.click(selectors.button.next)
             browser.pause(200)
         }
-        if (test.first || test.last || test.email) {
+        if (test.first || test.last || test.email) { //page six
             if (test.first) {
                 browser.setValue(selectors.field.first, test.first)
             }
@@ -78,7 +78,7 @@ module.exports = {
             browser.click(selectors.button.next)
         }
     },
-        checkResults: (selector, inputs, browser) => {
+        checkResults: (selector, inputs, browser) => { //page seven
             let keys = Object.getOwnPropertyNames(selector)
             keys.forEach((key) => {
                 if (inputs[key])
